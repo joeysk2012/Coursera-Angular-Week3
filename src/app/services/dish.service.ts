@@ -18,6 +18,18 @@ export class DishService {
   getFeaturedDish(): Dish {
     return DISHES.filter((dish) => dish.featured)[0];
   }
+
+  getAppetizers(): Dish[] {
+    return DISHES.filter((dish) => dish.category === 'appetizer');
+  }
+
+  getDesserts(): Dish[] {
+    return DISHES.filter((dish) => dish.category === 'dessert');
+  }
+
+  getMains() : Dish[] {
+    return DISHES.filter((dish) => dish.category === 'mains')
+  }
   
   constructor() { }
 }

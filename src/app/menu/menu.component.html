@@ -9,12 +9,46 @@
     </div>
   </div>
 
+  <h3>Appetizers</h3>
   <div fxFlex>
     <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
-        <img height="200px" src={{dish.image}} alt={{dish.name}} >
+      <mat-grid-tile *ngFor="let app of appetizers" [routerLink]="['/dishdetail', app.id]">
+        <mat-grid-tile-header *ngIf="app.liked">
+            <span class="fa fa-heart fa-lg"></span>
+        </mat-grid-tile-header>
+        <img height="200px" src={{app.image}} alt={{app.name}} >
         <mat-grid-tile-footer>
-          <h1>{{dish.name | uppercase}}</h1>
+          <h1>{{app.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <h3>Main Dishes</h3>
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let main of mains" [routerLink]="['/dishdetail', main.id]">
+        <mat-grid-tile-header *ngIf="main.liked">
+            <span class="fa fa-heart fa-lg"></span>
+        </mat-grid-tile-header>
+        <img height="200px" src={{main.image}} alt={{main.name}} >
+        <mat-grid-tile-footer>
+          <h1>{{main.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <h3>Desserts</h3>
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let des of desserts" [routerLink]="['/dishdetail', des.id]">
+        <mat-grid-tile-header *ngIf="des.liked">
+          <span class="fa fa-heart fa-lg"></span>
+        </mat-grid-tile-header>
+        <img height="200px" src={{des.image}} alt={{des.name}} >
+        <mat-grid-tile-footer>
+          <h1>{{des.name | uppercase}}</h1>
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>

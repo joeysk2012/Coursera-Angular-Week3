@@ -26,4 +26,9 @@ export class DishdetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  saveLikes(dish: Dish): void {
+    console.log(dish)
+    dish.liked = true
+  }
 }

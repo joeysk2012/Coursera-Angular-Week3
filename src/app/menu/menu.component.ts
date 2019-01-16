@@ -15,6 +15,12 @@ export class MenuComponent implements OnInit {
   
   selectedDish: Dish;
 
+  appetizers: Dish[];
+
+  desserts: Dish[];
+
+  mains: Dish[];
+
   onSelect(dish: Dish) {
     this.selectedDish = dish;
   }
@@ -23,6 +29,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() { 
     this.dishes = this.dishService.getDishes();
+    this.appetizers = this.dishService.getAppetizers();
+    this.desserts = this.dishService.getDesserts();
+    this.mains = this.dishService.getMains();
   }
   
 

@@ -8,6 +8,7 @@ export class Dish {
     featured: boolean;
     label: string;
     price: string;
+    liked: boolean;
     description: string;
     comments: Comment[]
 }
